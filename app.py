@@ -4,7 +4,7 @@ import numpy as np
 import librosa
 import json
 
-files={'DNN-57.51%': 'models/model_dnn.h5','CNN(without regularization)-69.69%': 'models/model_cnn1.h5','CNN(with regularization)-78.6%': 'models/model_cnn2.h5','CNN(with regularization and data augmentation)-83.71%': 'models/model_cnn3.h5','FCNN(without data slicing)-92.12%(overfitting)': 'models/fcnn_melspec_gtzan.h5','FCNN(with data slicing)-75%': 'models/fcnn_splice_songs_model.h5','FCNN(with data augmentation)-75%': 'models/fcnn_genre_classification_data_aug_model.h5','Short chunk CNN-81.4%': 'models/short_chunk_cnn.keras','MusiCNN-83%': 'models/musicnn.keras','CRNN-83%': 'models/crnn.keras','Noisy student training-83.38%': 'models/student_nst.keras','Knowledge expansion & distillation-81.64%': 'models/ked_student_nst.keras','LSTM(vocal)-63.75%': 'models/lstm_vocal_classifier.keras','CNN(accompaniment)-74.7%': 'models/cnn_accompaniment_classifier.keras'}
+files={'DNN-57.51%': 'models/model_dnn.h5','CNN(without regularization)-69.69%': 'models/model_cnn1.h5','CNN(with regularization)-78.6%': 'models/model_cnn2.h5','CNN(with regularization and data augmentation)-83.71%': 'models/model_cnn3.h5','FCNN(without data slicing)-92.12%': 'models/fcnn_melspec_gtzan.h5','FCNN(with data slicing)-75%': 'models/fcnn_splice_songs_model.h5','FCNN(with data augmentation)-75%': 'models/fcnn_genre_classification_data_aug_model.h5','Short chunk CNN-81.4%': 'models/short_chunk_cnn.keras','MusiCNN-83%': 'models/musicnn.keras','CRNN-83%': 'models/crnn.keras','Noisy student training-83.38%': 'models/student_nst.keras','Knowledge expansion & distillation-81.64%': 'models/ked_student_nst.keras','LSTM(vocal)-63.75%': 'models/lstm_vocal_classifier.keras','CNN(accompaniment)-74.7%': 'models/cnn_accompaniment_classifier.keras'}
 
 
 # Load genre mapping
@@ -33,7 +33,7 @@ st.title("Music Genre Classification")
 learning = st.selectbox("Choose the learning type", options=["Supervised learning", "Semi-Supervised learning"], index=0)
 
 if learning == "Supervised learning":
-    model_type = st.selectbox("Choose a model", options=["DNN-57.51%","CNN(without regularization)-69.69%","CNN(with regularization)-78.6%","CNN(with regularization and data augmentation)-83.71%","FCNN(without data slicing)-92.12%(overfitting)","FCNN(with data slicing)-75%","FCNN(with data augmentation)-75%", "Short chunk CNN-81.4%","MusiCNN-83%","CRNN-83%"], index=0)
+    model_type = st.selectbox("Choose a model", options=["DNN-57.51%","CNN(without regularization)-69.69%","CNN(with regularization)-78.6%","CNN(with regularization and data augmentation)-83.71%","FCNN(without data slicing)-92.12%","FCNN(with data slicing)-75%","FCNN(with data augmentation)-75%", "Short chunk CNN-81.4%","MusiCNN-83%","CRNN-83%"], index=0)
 elif learning == "Semi-Supervised learning":
     model_type = st.selectbox("Choose a model", options=["Noisy student training-83.38%","Knowledge expansion & distillation-81.64%"], index=0)
 elif learning == "Ensemble learning":
